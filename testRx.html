@@ -32,9 +32,7 @@
 				var text = 'time flies like an arrow', container =$("#container"), mouseMove = $("document").fromEvent('mousemove'),mouseMoveOffset = mouseMove.select(function(value){debugger;
 					var offset = getOffset(container);
 					return {
-						offsetX : value.clientX - offset.left + container.parent().parent().scrollLeft(),//document.documentElement.scrollLeft, 
-						offsetY : value.clientY - offset.top + container.parent().parent().scrollTop()//document.documentElement.scrollTop
-					};
+						offsetX : value.clientX - offset.left + container.parent().parent().scrollLeft(),						offsetY : value.clientY - offset.top + container.parent().parent().scrollTop()					};
 				});
 				
 				for(var i = 0;i < text.length; i++){
@@ -48,7 +46,6 @@
 						function(mouseEvent){debugger;
 							s.style.top = mouseEvent.offsetY + 'px';
 							s.style.left = mouseEvent.offsetX + i * 10 + 15 + 'px';
-							//s.style = $(mouseEvent).offset();
 						}
 					 );
 					
@@ -59,8 +56,6 @@
 			
 			function getOffset(cont){
 				
-//				var doc = element.ownerDocument,
-				//docElem = doc.documentElement
 				var docElem = cont.parent().parent(),
 				body = cont.parent(),
 				clientTop = docElem.offset().top || body.offset().top || 0,
